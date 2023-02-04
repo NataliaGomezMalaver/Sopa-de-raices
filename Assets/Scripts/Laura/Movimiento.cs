@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using Unity.VisualScripting;
+
 public class Movimiento : MonoBehaviour
 {
     private Rigidbody2D rb2D;
@@ -18,6 +21,10 @@ public class Movimiento : MonoBehaviour
     public int health = 3;
     //public GameObject miTextMesh;
     public TMP_Text healthText;
+    public Image barraVeg;
+    public float valorUnitarioRecolectado;
+    private int vegRecolectados = 0;
+
 
     private void Start()
     {
@@ -33,6 +40,8 @@ public class Movimiento : MonoBehaviour
         {
             rb2D.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
         }
+
+        
 
     }
 
@@ -69,7 +78,7 @@ public class Movimiento : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("conejo"))
         {
-            health -= 3;
+            health -= 1;
             healthText.text = "Vida: " + health;
 
             if (health <= 0)
@@ -77,5 +86,30 @@ public class Movimiento : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
     }
+
+   // private void OnTriggerStay2D(Collider2D collision)
+   // {
+
+        //if (collision.CompareTag("hortaliza"))
+        //{
+
+            //RecolectarVegetal();
+
+        //}
+
+    //}
+
+    public void RecolectarVegetal()
+    {
+        vegRecolectados++;
+
+        float count = vegRecolectados * valorUnitarioRecolectado;
+
+        barraVeg.fillAmount = count > 1 ? 1 : count;
+
+    }
+
+
 }
