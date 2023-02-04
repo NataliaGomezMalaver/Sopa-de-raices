@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5401775836575274409
 Transform:
   m_ObjectHideFlags: 0
@@ -211,8 +211,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   final: -2.55
-  barraVeg: {fileID: 0}
   oprimirBotonImage: {fileID: 5401775836575274415}
-  vegetal: {fileID: 5401775836582649684}
-  valorUnitarioRecolectado: 0.2
-  actualveg: 0
+  movimiento: {fileID: 0}
