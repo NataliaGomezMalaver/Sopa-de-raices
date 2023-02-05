@@ -12,8 +12,8 @@ public class Timer : MonoBehaviour
     private float restante;
     private bool corriendo;
     public GameObject panel;
-    public GameObject plataformas;
     public GameObject canvas;
+    public GameObject video;
     public AudioSource audioSource;
 
     private void Awake(){
@@ -22,9 +22,11 @@ public class Timer : MonoBehaviour
         corriendo = true;
     }
     void Start(){
-        panel.gameObject.SetActive(true);
-        plataformas.gameObject.SetActive(false);
+        // panel.gameObject.SetActive(false);
         
+        video.gameObject.SetActive(true);
+        canvas.SetActive(false);
+
     }
     // Update is called once per frame
     void Update()
@@ -32,6 +34,16 @@ public class Timer : MonoBehaviour
         if(corriendo)
         {
             restante -= Time.deltaTime;
+
+            // Debug.Log("HOLA");
+            // Debug.Log(restante);
+
+            if (restante < 24){
+
+
+                video.gameObject.SetActive(false);
+            }
+            
             if (restante < 1)
             {
                 audioSource.Play();
