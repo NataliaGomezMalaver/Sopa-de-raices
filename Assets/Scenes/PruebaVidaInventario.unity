@@ -1050,6 +1050,7 @@ GameObject:
   - component: {fileID: 753352946}
   - component: {fileID: 753352950}
   - component: {fileID: 753352951}
+  - component: {fileID: 753352952}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: player
@@ -1167,7 +1168,8 @@ Transform:
   m_LocalPosition: {x: -8.14, y: -1.5, z: 0}
   m_LocalScale: {x: 0.15149002, y: 0.15149002, z: 0.15149002}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1099457957}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1189,6 +1191,11 @@ MonoBehaviour:
   healthText: {fileID: 1910183211}
   barraVeg: {fileID: 792170530}
   valorUnitarioRecolectado: 0.2
+  groundCheck: {fileID: 1099457957}
+  groundCheckRadius: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!95 &753352951
 Animator:
   serializedVersion: 5
@@ -1209,6 +1216,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &753352952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753352945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60dae9d54d464a3428dd28ae33ee827d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &789146562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789146562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2895708, y: 1.3253403, z: -10}
+  m_LocalPosition: {x: -3.7436552, y: 1.3253403, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1822,7 +1841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058233832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2895708, y: 1.3253403, z: -10}
+  m_LocalPosition: {x: -3.7436552, y: 1.3253403, z: -10}
   m_LocalScale: {x: 0.07733096, y: 0.07733096, z: 0.07733096}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1954,6 +1973,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d07ff2273ad581440a800d4d5f95f675, type: 3}
+--- !u!1 &1099457956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099457957}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099457957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099457956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.75, y: -15.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 753352949}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1155885235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2577,7 @@ GameObject:
   - component: {fileID: 1436026028}
   - component: {fileID: 1436026027}
   - component: {fileID: 1436026030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}

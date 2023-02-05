@@ -25,6 +25,8 @@ public class Movimiento : MonoBehaviour
     public float valorUnitarioRecolectado;
     private int vegRecolectados = 0;
 
+    private Animator animator;
+
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
@@ -34,12 +36,15 @@ public class Movimiento : MonoBehaviour
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         //healthText = gameObject.GetComponent<TextMeshPro>();
 
     }
 
     void Update()
     {
+        animator.SetFloat("Horizontal", Mathf.Abs(movhoriz));
+
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         movhoriz = Input.GetAxisRaw("Horizontal") * velocidadMovimiento;
 
