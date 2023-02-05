@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     private float restante;
     private bool corriendo;
     public GameObject panel;
+    public GameObject plataformas;
 
     private void Awake(){
         restante = (min * 60) +  seg;
@@ -20,6 +21,7 @@ public class Timer : MonoBehaviour
     }
     void Start(){
         panel.gameObject.SetActive(true);
+        plataformas.gameObject.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -31,6 +33,7 @@ public class Timer : MonoBehaviour
             {
                 corriendo = true;
                 panel.gameObject.SetActive(false);
+               // plataformas.gameObject.SetActive(true);
                 //SONIDO DE QUE SE ACABÓ EL TIEMPO
                 //DESHABILITAR LA TECLA ESPACIO (?)
             }
