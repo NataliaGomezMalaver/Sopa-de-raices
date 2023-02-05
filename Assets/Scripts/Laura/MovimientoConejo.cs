@@ -9,21 +9,27 @@ public class MovimientoConejo : MonoBehaviour
     private bool moveRight = true;
     public float final;
     private float position;
+    private Animator animator;
+    private bool mirandoDerecha = true;
 
     private void Start()
     {
         position = transform.position.x;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        animator.SetFloat("Horizontal", Mathf.Abs(position));
         if (transform.position.x >= position)
         {
             moveRight = false;
+          
         }
         else if (transform.position.x <= final)
         {
             moveRight = true;
+            Girar();
         }
 
         if (moveRight)
@@ -33,6 +39,16 @@ public class MovimientoConejo : MonoBehaviour
         else
         {
             transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+            
         }
     }
+
+    private void Girar()
+    {
+        mirandoDerecha &= !mirandoDerecha;
+        Vector3 escala = transform.localScale;
+        escala.x *= -1;
+        transform.localScale = escala;
+    }
+
 }
