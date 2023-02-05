@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Hombre/Menu.unity
+    guid: 30dff3ad18f5b0c48be8582dbf2762fe
+  - enabled: 1
     path: Assets/Scenes/Hombre/PruebaVidaInventario 1.unity
     guid: 7cdf701b0f8e51547872e81250eddb2e
   - enabled: 1
     path: Assets/Scenes/Hombre/Nivel2.unity
     guid: 5566d98d1e716a646b5186a7931d124e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Hombre/Nivel 2.unity
     guid: 78e37d11663381e4ea035a9cb1570153
   - enabled: 1
