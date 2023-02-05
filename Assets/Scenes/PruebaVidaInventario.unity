@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 114700414}
   - component: {fileID: 114700413}
   - component: {fileID: 114700412}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Plataforma  (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: -0.9507611, y: 0, z: 0}
+  m_TrackedObjectOffset: {x: -5.567297, y: 0, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
@@ -434,8 +434,8 @@ MonoBehaviour:
   m_YDamping: 0
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.060000002
-  m_ScreenY: 0.68
+  m_ScreenX: -0.09000003
+  m_ScreenY: 0.717
   m_CameraDistance: 10
   m_DeadZoneWidth: 1.71
   m_DeadZoneHeight: 0.26
@@ -1091,18 +1091,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000333786, y: 0.42643738}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 15.897537, y: 32.49}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 16.351704, y: 32.70342}
   m_EdgeRadius: 0
 --- !u!212 &753352948
 SpriteRenderer:
@@ -1145,7 +1145,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 1585589278, guid: 4e814f3bab6b04443bf0de91b9a49e29, type: 3}
   m_Color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1164,11 +1164,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753352945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.14, y: -2.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.14, y: -1.5, z: 0}
+  m_LocalScale: {x: 0.15149002, y: 0.15149002, z: 0.15149002}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1254106846}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1190,23 +1189,26 @@ MonoBehaviour:
   healthText: {fileID: 1910183211}
   barraVeg: {fileID: 792170530}
   valorUnitarioRecolectado: 0.2
-  groundCheck: {fileID: 1254106846}
-  groundCheckRadius: 1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &753352951
-MonoBehaviour:
+--- !u!95 &753352951
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753352945}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60dae9d54d464a3428dd28ae33ee827d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f2590109cc6de74384c245a7ce0e359, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &789146562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1248,7 @@ MonoBehaviour:
   m_Follow: {fileID: 753352949}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 5.11
+    OrthographicSize: 6.51
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -1270,7 +1272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789146562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3214836, y: -0.9103999, z: -10}
+  m_LocalPosition: {x: -0.2895708, y: 1.3253403, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1366,7 +1368,7 @@ GameObject:
   - component: {fileID: 809481620}
   - component: {fileID: 809481619}
   - component: {fileID: 809481618}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Plataforma  (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1796,7 +1798,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.11
+  orthographic size: 6.51
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1820,7 +1822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058233832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3214836, y: -0.9103999, z: -10}
+  m_LocalPosition: {x: -0.2895708, y: 1.3253403, z: -10}
   m_LocalScale: {x: 0.07733096, y: 0.07733096, z: 0.07733096}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2034,37 +2036,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1254106845
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1254106846}
-  m_Layer: 0
-  m_Name: GroundChecker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1254106846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254106845}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1.1061, y: 1.1061, z: 1.1061}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 753352949}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1305429737
@@ -2305,7 +2276,7 @@ GameObject:
   - component: {fileID: 1344145857}
   - component: {fileID: 1344145856}
   - component: {fileID: 1344145855}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: 'Plataforma '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2556,7 +2527,7 @@ GameObject:
   - component: {fileID: 1436026028}
   - component: {fileID: 1436026027}
   - component: {fileID: 1436026030}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2681,7 +2652,7 @@ GameObject:
   - component: {fileID: 1712068142}
   - component: {fileID: 1712068141}
   - component: {fileID: 1712068140}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Plataforma  (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
