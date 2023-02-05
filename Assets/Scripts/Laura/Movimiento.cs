@@ -18,6 +18,7 @@ public class Movimiento : MonoBehaviour
 
     private Vector3 velocidad = Vector3.zero;
     private bool mirandoDerecha = true;
+    public int fuerzaSalto;
     public int health = 3;
     //public GameObject miTextMesh;
     public TMP_Text healthText;
@@ -27,6 +28,7 @@ public class Movimiento : MonoBehaviour
     public GameObject canvas;
     public AudioSource audioSource1;
         public AudioSource audioSource2;
+
 
     private Animator animator;
 
@@ -60,7 +62,7 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isTouchingGround)
         {
-            rb2D.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+            rb2D.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
         }
 
         
