@@ -11,13 +11,17 @@ public class MovimientoConejo : MonoBehaviour
     private float position;
     private Animator animator;
     private bool mirandoDerecha = true;
+    public AudioSource audioSource;
 
     private void Start()
     {
         position = transform.position.x;
         animator = GetComponent<Animator>();
     }
-
+    private void Awake()
+    {
+        audioSource.Play();
+    }
     void Update()
     {
         animator.SetFloat("Horizontal", Mathf.Abs(position));
