@@ -27,7 +27,7 @@ public class Movimiento : MonoBehaviour
     private int vegRecolectados = 0;
     public GameObject canvas;
     public AudioSource audioSource1;
-        public AudioSource audioSource2;
+    public AudioSource audioSource2;
     private float x = 0;
     private float y = 0;
     public float delay = 3;
@@ -61,6 +61,7 @@ public class Movimiento : MonoBehaviour
         animator.SetFloat("Horizontal", Mathf.Abs(movhoriz));
         animator.SetFloat("x", Mathf.Abs(x));
         animator.SetFloat("y", Mathf.Abs(y));
+
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         movhoriz = Input.GetAxisRaw("Horizontal") * velocidadMovimiento;
 
@@ -112,7 +113,7 @@ public class Movimiento : MonoBehaviour
 
     private void Girar()
     {
-        mirandoDerecha &= !mirandoDerecha;
+        mirandoDerecha = !mirandoDerecha;
         Vector3 escala = transform.localScale;
         escala.x *= -1;
         transform.localScale = escala;
