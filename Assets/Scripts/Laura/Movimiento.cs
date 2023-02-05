@@ -99,7 +99,7 @@ public class Movimiento : MonoBehaviour
 
     private void Girar()
     {
-        mirandoDerecha &= !mirandoDerecha;
+        mirandoDerecha = !mirandoDerecha;
         Vector3 escala = transform.localScale;
         escala.x *= -1;
         transform.localScale = escala;
