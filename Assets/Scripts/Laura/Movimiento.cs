@@ -32,6 +32,10 @@ public class Movimiento : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
     private bool isTouchingGround;
+    private float x = 0;
+    private float y = 0;
+    public float delay = 3;
+    private float timer;
 
 
     private void Start()
@@ -39,23 +43,37 @@ public class Movimiento : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         //healthText = gameObject.GetComponent<TextMeshPro>();
-
     }
 
     void Update()
     {
         animator.SetFloat("Horizontal", Mathf.Abs(movhoriz));
+        animator.SetFloat("x", Mathf.Abs(x));
+        animator.SetFloat("y", Mathf.Abs(y));
 
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         movhoriz = Input.GetAxisRaw("Horizontal") * velocidadMovimiento;
 
         if (Input.GetKeyDown(KeyCode.Space) && isTouchingGround)
         {
+            y = 1;
             rb2D.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+            // Debug.Log(x);  
+            // x = 1;
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.X)&& isTouchingGround)
+        {
+            x = 1;
+        }
 
+        timer += Time.deltaTime;
+        if (timer > delay)
+        {
+            x = 0;
+            y = 0;
+            timer = 0;
+         }
     }
 
     private void FixedUpdate()
@@ -102,7 +120,6 @@ public class Movimiento : MonoBehaviour
         }
 
     }
-
    // private void OnTriggerStay2D(Collider2D collision)
    // {
 
@@ -122,7 +139,6 @@ public class Movimiento : MonoBehaviour
         float count = vegRecolectados * valorUnitarioRecolectado;
 
         barraVeg.fillAmount = count > 1 ? 1 : count;
-
     }
 
 

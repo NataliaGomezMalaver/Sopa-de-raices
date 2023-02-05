@@ -42,7 +42,7 @@ public class MovHortaliza : MonoBehaviour
         position = transform.position.y;
         
 
-        Debug.Log(String.Format("positionX {0} - position {1} - final {2}", transform.position.x, position, final));
+        // Debug.Log(String.Format("positionX {0} - position {1} - final {2}", transform.position.x, position, final));
         if (transform.position.y <= final)
         {
             moveRight = true;
@@ -69,7 +69,7 @@ public class MovHortaliza : MonoBehaviour
             transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
         }
        
-        Debug.Log(String.Format("final position {0}", transform.position));
+        // Debug.Log(String.Format("final position {0}", transform.position));
     }
     
 
