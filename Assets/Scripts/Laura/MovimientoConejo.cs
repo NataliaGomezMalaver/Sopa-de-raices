@@ -12,6 +12,7 @@ public class MovimientoConejo : MonoBehaviour
 
     private Animator animator;
     private bool mirandoDerecha = true;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -19,7 +20,10 @@ public class MovimientoConejo : MonoBehaviour
         position = transform.position.x;
         animator = GetComponent<Animator>();
     }
-
+    private void Awake()
+    {
+        audioSource.Play();
+    }
     void Update()
     {
          

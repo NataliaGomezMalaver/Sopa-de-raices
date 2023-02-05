@@ -14,6 +14,7 @@ public class MovHortaliza : MonoBehaviour
     private float position;
     private bool ismoving = false;
     public GameObject oprimirBotonImage;
+    public AudioSource audioSource;
 
     [SerializeField]
     private Movimiento movimiento;
@@ -36,6 +37,10 @@ public class MovHortaliza : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        
+    }
     private void moveCircle ()
     {
 
@@ -51,7 +56,7 @@ public class MovHortaliza : MonoBehaviour
         {
             moveRight = false;
             ismoving= false;
-
+            
             movimiento.RecolectarVegetal();
 
             Destroy(gameObject, 0.4f);
@@ -88,6 +93,7 @@ public class MovHortaliza : MonoBehaviour
         {
             
            ismoving= true;
+           audioSource.Play();
         }
 
 

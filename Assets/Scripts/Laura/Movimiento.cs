@@ -25,6 +25,8 @@ public class Movimiento : MonoBehaviour
     public float valorUnitarioRecolectado;
     private int vegRecolectados = 0;
     public GameObject canvas;
+    public AudioSource audioSource1;
+        public AudioSource audioSource2;
 
     private Animator animator;
 
@@ -39,11 +41,18 @@ public class Movimiento : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         //healthText = gameObject.GetComponent<TextMeshPro>();
+        
 
+    }
+
+    private void Awake()
+    {
+        audioSource1.Play();
     }
 
     void Update()
     {
+        
         animator.SetFloat("Horizontal", Mathf.Abs(movhoriz));
 
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -68,14 +77,17 @@ public class Movimiento : MonoBehaviour
         Vector3 velocidadObjetivo = new Vector2(mover, rb2D.velocity.y);
         rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, velocidadObjetivo, ref velocidad, suavidadMovimiento);
 
+
         if (mover > 0 && !mirandoDerecha)
         {
             Girar();
+           
         }
 
         else if (mover < 0 && mirandoDerecha)
         {
             Girar();
+            
         }
     }
 
@@ -85,14 +97,17 @@ public class Movimiento : MonoBehaviour
         Vector3 escala = transform.localScale;
         escala.x *= -1;
         transform.localScale = escala;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("conejo"))
         {
+            audioSource2.Play();
             health -= 1;
             healthText.text = "Vida: " + health;
+            
 
             if (health <= 0)
             {

@@ -13,8 +13,8 @@ public class Timer : MonoBehaviour
     private bool corriendo;
     public GameObject panel;
     public GameObject plataformas;
-    public GameObject video;
-
+    public GameObject canvas;
+    public AudioSource audioSource;
 
     private void Awake(){
         restante = (min * 60) +  seg;
@@ -22,9 +22,9 @@ public class Timer : MonoBehaviour
         corriendo = true;
     }
     void Start(){
-        panel.gameObject.SetActive(false);
+        panel.gameObject.SetActive(true);
         plataformas.gameObject.SetActive(false);
-        video.gameObject.SetActive(true);
+        
     }
     // Update is called once per frame
     void Update()
@@ -32,17 +32,14 @@ public class Timer : MonoBehaviour
         if(corriendo)
         {
             restante -= Time.deltaTime;
-
-            if(restante < 24){
-                Debug.Log("Hello!");
-                panel.gameObject.SetActive(true);
-                video.gameObject.SetActive(false);
-            }
-            else if (restante < 1)
+            if (restante < 1)
             {
+                audioSource.Play();
                 corriendo = true;
                 panel.gameObject.SetActive(false);
-               // plataformas.gameObject.SetActive(true);
+                canvas.SetActive(true);
+                
+                // plataformas.gameObject.SetActive(true);
                 //SONIDO DE QUE SE ACABÓ EL TIEMPO
                 //DESHABILITAR LA TECLA ESPACIO (?)
             }
@@ -51,6 +48,4 @@ public class Timer : MonoBehaviour
             tiempo.text = string.Format( "{00:00}:{01:00}" , tempMin, tempSeg); 
         }
     }
-
-
 }
