@@ -50,7 +50,7 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isTouchingGround)
         {
-            rb2D.AddForce(Vector2.up * 8, ForceMode2D.Impulse);
+            rb2D.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
         }
 
         
