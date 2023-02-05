@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 public class Movimiento : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    private Animator animator;
 
     [Header("Movimiento")]
 
@@ -29,6 +30,7 @@ public class Movimiento : MonoBehaviour
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         //healthText = gameObject.GetComponent<TextMeshPro>();
 
     }
@@ -36,13 +38,13 @@ public class Movimiento : MonoBehaviour
     void Update()
     {
         movhoriz = Input.GetAxisRaw("Horizontal") * velocidadMovimiento;
+
+        animator.SetFloat("Horizontal", Mathf.Abs(movhoriz));
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb2D.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
         }
-
-        
-
     }
 
     private void FixedUpdate()
