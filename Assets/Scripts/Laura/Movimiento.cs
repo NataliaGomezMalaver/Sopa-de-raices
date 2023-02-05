@@ -28,7 +28,10 @@ public class Movimiento : MonoBehaviour
     public GameObject canvas;
     public AudioSource audioSource1;
         public AudioSource audioSource2;
-
+    private float x = 0;
+    private float y = 0;
+    public float delay = 3;
+    private float timer;
 
     private Animator animator;
 
@@ -56,16 +59,30 @@ public class Movimiento : MonoBehaviour
     {
         
         animator.SetFloat("Horizontal", Mathf.Abs(movhoriz));
-
+        animator.SetFloat("x", Mathf.Abs(x));
+        animator.SetFloat("y", Mathf.Abs(y));
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         movhoriz = Input.GetAxisRaw("Horizontal") * velocidadMovimiento;
 
         if (Input.GetKeyDown(KeyCode.Space) && isTouchingGround)
         {
             rb2D.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+            y = 1;
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.X) && isTouchingGround)
+        {
+            x = 1;
+        }
+
+        timer += Time.deltaTime;
+        if (timer > delay)
+        {
+            x = 0;
+            y = 0;
+            timer = 0;
+        }
+
 
     }
 
