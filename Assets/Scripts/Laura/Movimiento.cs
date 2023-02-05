@@ -25,6 +25,11 @@ public class Movimiento : MonoBehaviour
     public float valorUnitarioRecolectado;
     private int vegRecolectados = 0;
 
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask groundLayer;
+    private bool isTouchingGround;
+
 
     private void Start()
     {
@@ -35,10 +40,12 @@ public class Movimiento : MonoBehaviour
 
     void Update()
     {
+        isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         movhoriz = Input.GetAxisRaw("Horizontal") * velocidadMovimiento;
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space) && isTouchingGround)
         {
-            rb2D.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+            rb2D.AddForce(Vector2.up * 8, ForceMode2D.Impulse);
         }
 
         
