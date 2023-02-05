@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: b529da5694154fd47acf878ee585d171
+  - enabled: 1
+    path: Assets/Scenes/PruebaVidaInventario.unity
+    guid: 5566d98d1e716a646b5186a7931d124e
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
