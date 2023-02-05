@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: ad1b3c9f9e943434f911cf5f16779baf
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Muskeg
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1186839c6ebdc87458d24a8f033bd5ff, type: 3}
+  - {fileID: 12800000, guid: 82f8bc8ce82ffa34aa0600bf5c1e091f, type: 3}
+  - {fileID: 12800000, guid: 2a095382346f31242af35c77d8d8c0c0, type: 3}
+  - {fileID: 12800000, guid: a1a6ac06678846e49be7a55a2ebda702, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
