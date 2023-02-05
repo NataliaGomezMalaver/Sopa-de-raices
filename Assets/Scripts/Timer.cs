@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
             {
                 corriendo = true;
                 panel.gameObject.SetActive(false);
-                plataformas.gameObject.SetActive(true);
+               // plataformas.gameObject.SetActive(true);
                 //SONIDO DE QUE SE ACABÓ EL TIEMPO
                 //DESHABILITAR LA TECLA ESPACIO (?)
             }

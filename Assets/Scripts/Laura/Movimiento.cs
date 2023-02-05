@@ -24,6 +24,7 @@ public class Movimiento : MonoBehaviour
     public Image barraVeg;
     public float valorUnitarioRecolectado;
     private int vegRecolectados = 0;
+    public GameObject canvas;
 
 
     private void Start()
@@ -84,6 +85,7 @@ public class Movimiento : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+                canvas.SetActive(true);
             }
         }
 
