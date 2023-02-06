@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hombre/Menu.unity
     guid: 30dff3ad18f5b0c48be8582dbf2762fe
+  - enabled: 0
+    path: Assets/Scenes/Hombre/PruebaVidaInventario 2.unity
+    guid: ee3082477eb41ca4a85ee1c829a522e6
   - enabled: 1
     path: Assets/Scenes/Hombre/Personaje.unity
     guid: 7cdf701b0f8e51547872e81250eddb2e
